@@ -29,12 +29,12 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
     } else if (_phone.trim() == "") {
       Fluttertoast.showToast(
         msg: "Enter Phone Number",
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.teal.shade800,
       );
     } else {
       Fluttertoast.showToast(
         msg: "Invalid Phone Number",
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.teal.shade800,
       );
     }
   }
@@ -47,12 +47,12 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
         children: [
           Container(
             height: 50,
-            color: Colors.teal,
+            color: Colors.teal.shade800,
           ),
           Container(
             height: MediaQuery.of(context).size.height * 0.25,
             decoration: BoxDecoration(
-              color: Colors.teal,
+              color: Colors.teal.shade800,
               borderRadius: BorderRadius.circular(30),
             ),
           ),
@@ -75,11 +75,11 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Welcome User,",
                   style: TextStyle(
                     fontSize: 25,
-                    color: Colors.teal,
+                    color: Colors.teal.shade800,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

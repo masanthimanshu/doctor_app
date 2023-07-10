@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctors_app/components/custom_calander.dart';
 import 'package:doctors_app/components/custom_icon_button.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       children: [
         Container(
-          color: Colors.teal,
+          color: Colors.teal.shade800,
           padding: const EdgeInsets.all(20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     image: const DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
+                      image: CachedNetworkImageProvider(
                         "https://cdn-icons-png.flaticon.com/512/149/149071.png",
                       ),
                     ),
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         Container(
-          color: Colors.teal,
+          color: Colors.teal.shade800,
           child: Container(
             margin: const EdgeInsets.all(20),
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -86,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Container(
           height: 100,
-          color: Colors.teal,
+          color: Colors.teal.shade800,
           child: const CustomCalender(),
         ),
         Container(
@@ -99,11 +100,11 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 "Services",
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.teal,
+                  color: Colors.teal.shade800,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -176,13 +177,55 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         ListView.builder(
-          itemCount: 20,
+          itemCount: 5,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (e, index) {
-            return Container(
-              height: 20,
-              color: Colors.blue,
+            return Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+                vertical: 5,
+              ),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Symptoms of Covid to watch out for.",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.indigo,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "June 05, 09:10 PM",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  Container(
+                    width: 150,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: CachedNetworkImageProvider(
+                          "https://www.paho.org/sites/default/files/styles/max_1500x1500/public/2021-01/covid-19-vaccination-1500-991-2.jpg",
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         ),

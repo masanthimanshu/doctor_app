@@ -50,7 +50,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                     dayNum.toString(),
                     style: TextStyle(
                       color:
-                          index == _selectedIndex ? Colors.teal : Colors.white,
+                          index == _selectedIndex ? Colors.teal.shade800 : Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

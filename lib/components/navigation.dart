@@ -35,7 +35,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
           children: [
             Container(
               height: 70,
-              color: Colors.teal,
+              color: Colors.teal.shade800,
             ),
             _pages[_selectedIndex],
           ],

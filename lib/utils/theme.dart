@@ -5,19 +5,23 @@ class AppTheme {
   static ThemeData theme = ThemeData(
     textTheme: GoogleFonts.muktaTextTheme(),
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.teal,
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.teal.shade800,
       elevation: 0,
     ),
-    elevatedButtonTheme: const ElevatedButtonThemeData(
+    elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStatePropertyAll(Colors.teal),
-        padding: MaterialStatePropertyAll(
-          EdgeInsets.all(10),
+        shape: MaterialStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(200),
+          ),
         ),
-        textStyle: MaterialStatePropertyAll(
+        backgroundColor: MaterialStatePropertyAll(Colors.amber.shade800),
+        padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
+        textStyle: const MaterialStatePropertyAll(
           TextStyle(
             fontSize: 15,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

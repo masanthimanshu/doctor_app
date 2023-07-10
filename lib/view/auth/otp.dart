@@ -30,12 +30,12 @@ class _OtpScreenState extends State<OtpScreen> {
     } else if (_otp.trim() == "") {
       Fluttertoast.showToast(
         msg: "Enter Your OTP",
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.teal.shade800,
       );
     } else {
       Fluttertoast.showToast(
         msg: "Invalid OTP",
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.teal.shade800,
       );
     }
   }
@@ -48,12 +48,12 @@ class _OtpScreenState extends State<OtpScreen> {
         children: [
           Container(
             height: 50,
-            color: Colors.teal,
+            color: Colors.teal.shade800,
           ),
           Container(
             height: MediaQuery.of(context).size.height * 0.25,
             decoration: BoxDecoration(
-              color: Colors.teal,
+              color: Colors.teal.shade800,
               borderRadius: BorderRadius.circular(30),
             ),
           ),
@@ -81,9 +81,9 @@ class _OtpScreenState extends State<OtpScreen> {
                   children: [
                     Text(
                       "${widget.countryCode} - ${widget.phoneNumber}",
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 25,
-                        color: Colors.teal,
+                        color: Colors.teal.shade800,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
