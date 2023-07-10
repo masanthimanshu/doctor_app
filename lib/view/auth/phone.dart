@@ -1,5 +1,5 @@
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:doctors_app/view/auth/otp.dart';
+import 'package:doctors_app/controller/auth/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -17,14 +17,10 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
 
   _handleSubmit() {
     if (_numberPattern.hasMatch(_phone)) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => OtpScreen(
-            phoneNumber: _phone,
-            countryCode: _countryCode,
-          ),
-        ),
+      AuthRepository().sendOtp(
+        context: context,
+        phoneNumber: _phone,
+        countryCode: _countryCode,
       );
     } else if (_phone.trim() == "") {
       Fluttertoast.showToast(

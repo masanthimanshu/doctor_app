@@ -1,14 +1,16 @@
-import 'package:doctors_app/components/navigation.dart';
+import 'package:doctors_app/controller/auth/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({
     super.key,
+    required this.verId,
     required this.countryCode,
     required this.phoneNumber,
   });
 
+  final String verId;
   final String countryCode;
   final String phoneNumber;
 
@@ -22,10 +24,10 @@ class _OtpScreenState extends State<OtpScreen> {
 
   _handleSubmit() {
     if (_otpPattern.hasMatch(_otp)) {
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (_) => const BottomNavbar()),
-        ModalRoute.withName('/home'),
+      AuthRepository().verifyOTP(
+        userOTP: _otp,
+        context: context,
+        verificationId: widget.verId,
       );
     } else if (_otp.trim() == "") {
       Fluttertoast.showToast(
