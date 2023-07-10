@@ -47,9 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   width: 40,
                   height: 40,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    image: DecorationImage(
+                    border: Border.all(
+                      width: 2,
+                      color: Colors.white,
+                    ),
+                    image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
                         "https://cdn-icons-png.flaticon.com/512/149/149071.png",
