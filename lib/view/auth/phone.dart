@@ -23,15 +23,9 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
         countryCode: _countryCode,
       );
     } else if (_phone.trim() == "") {
-      Fluttertoast.showToast(
-        msg: "Enter Phone Number",
-        backgroundColor: Colors.teal.shade800,
-      );
+      Fluttertoast.showToast(msg: "Enter Phone Number");
     } else {
-      Fluttertoast.showToast(
-        msg: "Invalid Phone Number",
-        backgroundColor: Colors.teal.shade800,
-      );
+      Fluttertoast.showToast(msg: "Invalid Phone Number");
     }
   }
 

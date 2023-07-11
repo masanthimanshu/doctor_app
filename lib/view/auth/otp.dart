@@ -30,15 +30,9 @@ class _OtpScreenState extends State<OtpScreen> {
         verificationId: widget.verId,
       );
     } else if (_otp.trim() == "") {
-      Fluttertoast.showToast(
-        msg: "Enter Your OTP",
-        backgroundColor: Colors.teal.shade800,
-      );
+      Fluttertoast.showToast(msg: "Enter Your OTP");
     } else {
-      Fluttertoast.showToast(
-        msg: "Invalid OTP",
-        backgroundColor: Colors.teal.shade800,
-      );
+      Fluttertoast.showToast(msg: "Invalid OTP");
     }
   }
 
@@ -60,7 +54,7 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
           ),
           Container(
-            height: 275,
+            height: 325,
             width: double.infinity,
             margin: const EdgeInsets.fromLTRB(20, 75, 20, 0),
             padding: const EdgeInsets.all(20),
@@ -125,12 +119,21 @@ class _OtpScreenState extends State<OtpScreen> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 15),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: _handleSubmit,
                     child: const Text("Submit"),
+                  ),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text("Resend OTP"),
                   ),
                 ),
               ],

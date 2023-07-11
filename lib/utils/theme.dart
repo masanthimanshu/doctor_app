@@ -19,27 +19,21 @@ class AppTheme {
         backgroundColor: MaterialStatePropertyAll(Colors.amber.shade800),
         padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
         textStyle: const MaterialStatePropertyAll(
-          TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-          ),
+          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         ),
       ),
     ),
-    textButtonTheme: const TextButtonThemeData(
+    textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        textStyle: MaterialStatePropertyAll(
-          TextStyle(
-            fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.bold,
-          ),
+        textStyle: const MaterialStatePropertyAll(
+          TextStyle(fontWeight: FontWeight.bold),
         ),
-        foregroundColor: MaterialStatePropertyAll(Colors.amber),
+        foregroundColor: MaterialStatePropertyAll(Colors.amber.shade800),
       ),
     ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.amber,
+      selectedItemColor: Colors.amber.shade800,
       showUnselectedLabels: false,
       showSelectedLabels: false,
     ),

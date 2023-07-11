@@ -19,6 +19,8 @@ class AuthRepository {
           await auth.signInWithCredential(credential);
         },
         codeSent: ((String verificationId, int? resendToken) async {
+          Fluttertoast.showToast(msg: "OTP Sent");
+
           Navigator.push(
             context,
             MaterialPageRoute(
