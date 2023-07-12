@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:doctors_app/view/home/appointments.dart';
 import 'package:doctors_app/view/home/doctors.dart';
 import 'package:doctors_app/view/home/home.dart';
@@ -13,12 +14,6 @@ class BottomNavbar extends StatefulWidget {
 
 class _BottomNavbarState extends State<BottomNavbar> {
   int _selectedIndex = 0;
-
-  _navigateUser(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   final List _pages = [
     const HomeScreen(),
@@ -38,28 +33,34 @@ class _BottomNavbarState extends State<BottomNavbar> {
               color: Colors.teal.shade800,
             ),
             _pages[_selectedIndex],
+            const SizedBox(height: 20),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _navigateUser,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "",
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.white,
+        color: Colors.grey.shade300,
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        items: [
+          Icon(
+            Icons.home,
+            color: _selectedIndex == 0 ? Colors.amber.shade800 : Colors.black,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt_sharp),
-            label: "",
+          Icon(
+            Icons.list_alt_sharp,
+            color: _selectedIndex == 1 ? Colors.amber.shade800 : Colors.black,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
-            label: "",
+          Icon(
+            Icons.calendar_month,
+            color: _selectedIndex == 2 ? Colors.amber.shade800 : Colors.black,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "",
+          Icon(
+            Icons.settings,
+            color: _selectedIndex == 3 ? Colors.amber.shade800 : Colors.black,
           ),
         ],
       ),

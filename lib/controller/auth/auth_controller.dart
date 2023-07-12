@@ -1,5 +1,5 @@
-import 'package:doctors_app/components/navigation.dart';
 import 'package:doctors_app/view/auth/otp.dart';
+import 'package:doctors_app/view/register/signup_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -56,8 +56,8 @@ class AuthRepository {
       await auth.signInWithCredential(credential).then((value) {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (_) => const BottomNavbar()),
-          ModalRoute.withName('/home'),
+          MaterialPageRoute(builder: (_) => const SignupProfile()),
+          ModalRoute.withName("/register"),
         );
       }).catchError((e) => throw Exception(e.message));
     } on FirebaseAuthException {

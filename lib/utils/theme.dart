@@ -31,11 +31,5 @@ class AppTheme {
         foregroundColor: MaterialStatePropertyAll(Colors.amber.shade800),
       ),
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.amber.shade800,
-      showUnselectedLabels: false,
-      showSelectedLabels: false,
-    ),
   );
 }
