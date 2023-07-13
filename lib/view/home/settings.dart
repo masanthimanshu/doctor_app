@@ -1,3 +1,4 @@
+import 'package:doctors_app/view/auth/phone.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,14 @@ class SettingsScreen extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                FirebaseAuth.instance.signOut();
+                FirebaseAuth.instance.signOut().then((value) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const PhoneNumberScreen(),
+                    ),
+                  );
+                });
               },
               child: const Text("Sign out"),
             ),
