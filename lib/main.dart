@@ -1,6 +1,6 @@
 import 'package:doctors_app/components/navigation.dart';
 import 'package:doctors_app/firebase_options.dart';
-import 'package:doctors_app/root.dart';
+import 'package:doctors_app/utils/root.dart';
 import 'package:doctors_app/utils/theme.dart';
 import 'package:doctors_app/view/register/signup_profile.dart';
 import 'package:firebase_core/firebase_core.dart';
